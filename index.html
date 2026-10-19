@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Convert PDF to Word with page-image fidelity or editable text extraction. Runs fully in your browser.">
+<meta property="og:title" content="PDF → Word | ClearConvert">
+<meta property="og:description" content="Convert PDF to Word in your browser. Exact page appearance or editable text, with OCR.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2368e0d0'/%3E%3Ctext x='32' y='44' font-size='36' font-weight='900' text-anchor='middle' fill='%2307111e'%3E%E2%86%97%3C/text%3E%3C/svg%3E">
+<title>PDF → Word | ClearConvert</title>
+<style>
+:root{--bg:#080d18;--panel:#111a2b;--line:#24314a;--muted:#9aabc5;--text:#f4f7ff;--blue:#7c9cff;--cyan:#68e0d0;--gold:#d9c28b}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#1d3155 0,transparent 48%),var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}button,input,select{font:inherit}.wrap{max-width:1120px;margin:auto;padding:24px 22px 60px}.nav{display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:.2px}.logo{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#91aaff,#64dfd0);color:#07111e;font-size:20px;font-weight:900}.pill{border:1px solid #344361;border-radius:99px;padding:7px 12px;color:#cbd7ef;background:#10192a}.hero{text-align:center;padding:62px 0 35px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800}.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.06;letter-spacing:-2px;margin:15px auto;max-width:850px}.grad{background:linear-gradient(100deg,#dfe7ff,#7f9dff 50%,#72e1d0);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:680px;margin:18px auto;font-size:17px}.main{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:start}.panel{background:linear-gradient(180deg,rgba(20,31,51,.97),rgba(13,21,36,.98));border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 18px 60px #0003}.panel h2{margin:0 0 5px;font-size:21px}.sub{color:var(--muted);font-size:13px;margin:0 0 20px}.drop{display:block;border:1.5px dashed #4b6085;border-radius:18px;padding:28px 16px;text-align:center;background:#0b1423;cursor:pointer;transition:.2s}.drop:hover,.drop.drag{border-color:var(--cyan);background:#0e1d2d}.upload-icon{font-size:34px;margin-bottom:8px}.drop strong{display:block;font-size:17px}.drop span{display:block;color:var(--muted);font-size:13px;margin-top:5px}.filename{margin-top:12px;color:var(--cyan);font-size:13px;overflow-wrap:anywhere}.hidden{display:none}.field{margin-top:19px}.field label{display:block;color:#dce5f8;font-weight:700;font-size:13px;margin-bottom:8px}.modes{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mode{border:1px solid #2d3b57;border-radius:15px;padding:13px;background:#0b1422;cursor:pointer;display:block}.mode:has(input:checked){border-color:var(--blue);background:#162441;box-shadow:inset 0 0 0 1px #7c9cff33}.mode input{accent-color:var(--blue)}.mode b{display:block;margin:6px 0 4px}.mode small{color:var(--muted);display:block;line-height:1.4}.selectrow{display:grid;grid-template-columns:1fr 1fr;gap:12px}.selectrow select{width:100%;padding:11px 12px;border-radius:12px;border:1px solid #344361;background:#0b1422;color:var(--text)}.btn{border:0;border-radius:13px;padding:14px 18px;background:linear-gradient(100deg,#8ba5ff,#67e0d0);color:#081321;font-weight:850;cursor:pointer;width:100%;margin-top:22px;transition:transform .15s,opacity .15s}.btn:hover{transform:translateY(-1px)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.status{display:none;margin-top:14px;border:1px solid #2b4560;background:#0a1421;padding:13px;border-radius:12px;color:#dbe7ff;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}.status.show{display:block}.status.err{border-color:#7a3340;background:#1d0e14;color:#ffd5db}.bar{height:5px;background:#25334d;border-radius:8px;margin-top:9px;overflow:hidden}.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#8ba5ff,#67e0d0);transition:width .2s}.features{display:grid;gap:12px}.feature{display:flex;gap:13px;padding:14px;border:1px solid #26334b;border-radius:15px;background:#0c1422}.fi{width:38px;height:38px;flex:0 0 38px;border-radius:12px;background:#1b2b46;display:grid;place-items:center;color:var(--cyan);font-size:18px}.feature b{display:block}.feature span{display:block;color:var(--muted);font-size:13px;margin-top:2px}.notice{margin-top:17px;padding:13px 14px;border-left:3px solid var(--gold);background:#211d18;color:#e4d8bc;border-radius:0 12px 12px 0;font-size:12px}.steps{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.step{padding:17px;border:1px solid var(--line);border-radius:17px;background:#0d1524}.num{color:var(--cyan);font-size:12px;font-weight:800}.step b{display:block;margin:7px 0 4px}.step p{font-size:13px;color:var(--muted);margin:0}.footer{text-align:center;color:#73829c;font-size:12px;margin-top:30px}.footer a{color:#a8b9e9}.small{font-size:12px;color:var(--muted)}@media(max-width:800px){.main{grid-template-columns:1fr}.hero{padding-top:45px}.steps{grid-template-columns:1fr}.wrap{padding:17px 14px 40px}}@media(max-width:450px){.panel{padding:17px}.modes,.selectrow{grid-template-columns:1fr}.hero h1{letter-spacing:-1px}}
+</style>
+</head>
+<body><div class="wrap">
+<header class="nav"><div class="brand"><div class="logo">↗</div><div>ClearConvert <div class="small">PDF to Word Studio</div></div></div><select id="uiLang" class="pill" aria-label="Interface language"><option value="en">English</option><option value="uz">O‘zbekcha</option><option value="ru">Русский</option><option value="kk">Қазақша</option></select></header>
+<section class="hero"><div class="eyebrow" data-i="eyebrow">DOCUMENT CONVERSION, REIMAGINED</div><h1 data-i="headline">Your PDF, <span class="grad">beautifully in Word.</span></h1><p data-i="intro">Convert PDF documents into Word files. Choose editable text or preserve each page’s original appearance.</p></section>
+<main class="main"><section class="panel"><h2 data-i="convert">Convert your document</h2><p class="sub" data-i="sub">Your PDF is processed locally in your browser. It is not uploaded to our server by this demo.</p>
+<label class="drop" id="drop"><div class="upload-icon">⇧</div><strong data-i="dropTitle">Drop your PDF here</strong><span data-i="dropSub">or click to browse · PDF only · up to 30 MB recommended</span><div class="filename" id="filename"></div><input id="file" class="hidden" type="file" accept="application/pdf,.pdf"></label>
+<div class="field"><label data-i="modeLabel">Choose conversion mode</label><div class="modes"><label class="mode"><input type="radio" name="mode" value="exact" checked><b data-i="exactTitle">Exact page appearance</b><small data-i="exactDesc">Each PDF page becomes a high-resolution image in Word. Best for preserving tables, forms and layout.</small></label><label class="mode"><input type="radio" name="mode" value="text"><b data-i="textTitle">Editable text</b><small data-i="textDesc">Extract selectable text and place it in Word. Complex tables and formatting may change.</small></label></div></div>
+<div class="field"><label data-i="langLabel">OCR language (for scanned PDFs)</label><div class="selectrow"><select id="ocrLang"><option value="eng+rus">English + Russian</option><option value="uzb+rus">Uzbek + Russian</option><option value="kaz+rus">Kazakh + Russian</option><option value="eng">English</option><option value="rus">Russian</option><option value="uzb">Uzbek</option><option value="kaz">Kazakh</option></select><select id="scale"><option value="2">Image quality: High</option><option value="2.5">Image quality: Very high</option><option value="1.5">Image quality: Standard</option></select></div><p class="small" data-i="ocrNote">OCR is used only when a page has no selectable text. Recognition quality depends on scan clarity and language.</p></div>
+<button class="btn" id="go" disabled data-i="button">Choose a PDF to begin →</button><div class="status" id="status" role="status" aria-live="polite"></div><div class="bar"><span id="bar"></span></div>
+</section><aside class="panel"><h2 data-i="why">Built for documents that matter</h2><p class="sub" data-i="whySub">A clear workflow for books, reports and office paperwork.</p><div class="features"><div class="feature"><div class="fi">▦</div><div><b data-i="f1">Table-friendly option</b><span data-i="f1d">Exact mode keeps the original table look, including rows and columns.</span></div></div><div class="feature"><div class="fi">Aa</div><div><b data-i="f2">Selectable text extraction</b><span data-i="f2d">Editable mode reads text embedded in many digital PDFs.</span></div></div><div class="feature"><div class="fi">◈</div><div><b data-i="f3">Private by design</b><span data-i="f3d">This demo processes files in your browser; third-party libraries load from CDNs.</span></div></div><div class="feature"><div class="fi">文</div><div><b data-i="f4">Multilingual interface</b><span data-i="f4d">Use the language menu to switch between English, Uzbek, Russian and Kazakh.</span></div></div></div><div class="notice" data-i="notice">Important: this is a browser-based starter, not a certified document-reconstruction engine. Always compare the output with the original, especially numbers, formulas and accounting entries.</div></aside></main>
+<section class="steps"><div class="step"><div class="num">STEP 01</div><b data-i="s1">Upload a PDF</b><p data-i="s1d">Select a file from your device.</p></div><div class="step"><div class="num">STEP 02</div><b data-i="s2">Choose a mode</b><p data-i="s2d">Preserve appearance or extract editable text.</p></div><div class="step"><div class="num">STEP 03</div><b data-i="s3">Download Word</b><p data-i="s3d">Save a .docx file and review it before use.</p></div></section>
+<footer class="footer">ClearConvert · PDF to Word Studio · <span data-i="foot">Starter demo. Internet connection required to load conversion libraries.</span><br><a href="https://mozilla.github.io/pdf.js/" target="_blank" rel="noopener">PDF.js</a> · <a href="https://github.com/dolanmiu/docx" target="_blank" rel="noopener">docx</a> · <a href="https://github.com/naptha/tesseract.js" target="_blank" rel="noopener">Tesseract.js</a></footer>
+<noscript><p class="small" style="text-align:center">JavaScript is required.</p></noscript>
+</div>
+<script>
+/* ---------- Libraries: auto-loaded with CDN fallbacks (no hard dependency on one CDN) ---------- */
+const PDFJS_VER='3.11.174', DOCX_VER='8.5.0', TESS_VER='5';
+const PDF_URLS=[
+  'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/'+PDFJS_VER+'/pdf.min.js',
+  'https://cdn.jsdelivr.net/npm/pdfjs-dist@'+PDFJS_VER+'/build/pdf.min.js',
+  'https://unpkg.com/pdfjs-dist@'+PDFJS_VER+'/build/pdf.min.js'];
+const PDF_WORKER_URLS=[
+  'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/'+PDFJS_VER+'/pdf.worker.min.js',
+  'https://cdn.jsdelivr.net/npm/pdfjs-dist@'+PDFJS_VER+'/build/pdf.worker.min.js',
+  'https://unpkg.com/pdfjs-dist@'+PDFJS_VER+'/build/pdf.worker.min.js'];
+const DOCX_URLS=[
+  'https://unpkg.com/docx@'+DOCX_VER+'/build/index.js',
+  'https://cdn.jsdelivr.net/npm/docx@'+DOCX_VER+'/build/index.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/docx/'+DOCX_VER+'/docx.min.js'];
+const TESS_URLS=[
+  'https://cdn.jsdelivr.net/npm/tesseract.js@'+TESS_VER+'/dist/tesseract.min.js',
+  'https://unpkg.com/tesseract.js@'+TESS_VER+'/dist/tesseract.min.js'];
+
+function loadScript(url,timeout=20000){
+  return new Promise((res,rej)=>{
+    const s=document.createElement('script');let done=false;
+    const t=setTimeout(()=>{if(!done){done=true;s.remove();rej(new Error('timeout '+url))}},timeout);
+    s.src=url;s.async=true;
+    s.onload=()=>{if(!done){done=true;clearTimeout(t);res()}};
+    s.onerror=()=>{if(!done){done=true;clearTimeout(t);s.remove();rej(new Error('failed '+url))}};
+    document.head.appendChild(s);
+  });
+}
+async function loadFrom(urls,check){
+  if(check())return;
+  for(const u of urls){try{await loadScript(u);if(check())return}catch(e){console.warn(e.message)}}
+  throw new Error('lib-load-failed');
+}
+async function setupPdfWorker(){
+  /* Fetch worker as a Blob so it works from any origin (GitHub Pages, file://, custom domain). */
+  for(const u of PDF_WORKER_URLS){
+    try{
+      const r=await fetch(u);if(!r.ok)continue;
+      const code=await r.text();
+      pdfjsLib.GlobalWorkerOptions.workerSrc=URL.createObjectURL(new Blob([code],{type:'text/javascript'}));
+      return;
+    }catch(e){console.warn('worker',u,e.message)}
+  }
+  pdfjsLib.GlobalWorkerOptions.workerSrc=PDF_WORKER_URLS[0]; /* last resort: pdf.js fake-worker fallback */
+}
+let libsPromise=null;
+function loadLibs(){
+  if(!libsPromise){
+    libsPromise=(async()=>{
+      await Promise.all([loadFrom(PDF_URLS,()=>window.pdfjsLib),loadFrom(DOCX_URLS,()=>window.docx)]);
+      await setupPdfWorker();
+    })().catch(e=>{libsPromise=null;throw e});
+  }
+  return libsPromise;
+}
+
+/* ---------- i18n ---------- */
+const T={
+en:{eyebrow:'DOCUMENT CONVERSION, REIMAGINED',headline:'Your PDF, <span class="grad">beautifully in Word.</span>',intro:'Convert PDF documents into Word files. Choose editable text or preserve each page’s original appearance.',convert:'Convert your document',sub:'Your PDF is processed locally in your browser. It is not uploaded to our server by this demo.',dropTitle:'Drop your PDF here',dropSub:'or click to browse · PDF only · up to 30 MB recommended',modeLabel:'Choose conversion mode',exactTitle:'Exact page appearance',exactDesc:'Each PDF page becomes a high-resolution image in Word. Best for preserving tables, forms and layout.',textTitle:'Editable text',textDesc:'Extract selectable text and place it in Word. Complex tables and formatting may change.',langLabel:'OCR language (for scanned PDFs)',ocrNote:'OCR is used only when a page has no selectable text. Recognition quality depends on scan clarity and language.',button:'Convert to Word →',why:'Built for documents that matter',whySub:'A clear workflow for books, reports and office paperwork.',f1:'Table-friendly option',f1d:'Exact mode keeps the original table look, including rows and columns.',f2:'Selectable text extraction',f2d:'Editable mode reads text embedded in many digital PDFs.',f3:'Private by design',f3d:'Files are processed in your browser and never uploaded; libraries and OCR language data load from CDNs.',f4:'Multilingual interface',f4d:'Use the language menu to switch between English, Uzbek, Russian and Kazakh.',notice:'Important: this is a browser-based starter, not a certified document-reconstruction engine. Always compare the output with the original, especially numbers, formulas and accounting entries.',s1:'Upload a PDF',s1d:'Select a file from your device.',s2:'Choose a mode',s2d:'Preserve appearance or extract editable text.',s3:'Download Word',s3d:'Save a .docx file and review it before use.',foot:'Libraries load automatically; internet connection required.',choose:'Choose a PDF to begin →',libLoading:'Loading conversion libraries…',loading:'Loading PDF…',page:'Processing page',done:'Done! Your Word file has been downloaded.',error:'Conversion failed: ',noLib:'Could not load conversion libraries from any CDN. Check your internet connection and try again.',ocrLoad:'Loading OCR engine…',ocr:'Recognizing scanned page with OCR…',empty:'No selectable text found. Running OCR…',download:'Creating Word file…',tooBig:'Large file — conversion may take a while.',notPdf:'Please choose a PDF file.',pwd:'This PDF is password-protected. Remove the password and try again.',noText:'[No text could be recognized on this page.]'},
+uz:{eyebrow:'HUJJATLARNI YANGICHA KONVERTATSIYA QILING',headline:'PDF faylingiz <span class="grad">Word formatida.</span>',intro:'PDF hujjatlarni Word fayliga aylantiring. Tahrirlanadigan matnni tanlang yoki sahifaning asl ko‘rinishini saqlang.',convert:'Hujjatni konvertatsiya qilish',sub:'Ushbu demo PDF faylni brauzeringizda qayta ishlaydi; serverimizga yuklamaydi.',dropTitle:'PDF faylni shu yerga tashlang',dropSub:'yoki tanlash uchun bosing · faqat PDF · 30 MB gacha tavsiya etiladi',modeLabel:'Konvertatsiya usulini tanlang',exactTitle:'Asl ko‘rinishni saqlash',exactDesc:'Har bir PDF sahifasi Word ichiga yuqori sifatli rasm sifatida joylanadi. Jadvallar va maket uchun qulay.',textTitle:'Tahrirlanadigan matn',textDesc:'Matnni ajratib Word’ga joylaydi. Murakkab jadvallar va format o‘zgarishi mumkin.',langLabel:'OCR tili (skanerlangan PDF uchun)',ocrNote:'OCR faqat sahifada tanlanadigan matn bo‘lmasa ishlatiladi. Natija skan sifati va tilga bog‘liq.',button:'Word’ga aylantirish →',why:'Muhim hujjatlar uchun yaratilgan',whySub:'Kitoblar, hisobotlar va ish hujjatlari uchun qulay jarayon.',f1:'Jadvallar uchun mos',f1d:'Asl ko‘rinish rejimi jadvalning qator va ustunlarini ko‘rinish jihatdan saqlaydi.',f2:'Matnni ajratib olish',f2d:'Tahrirlash rejimi ko‘plab raqamli PDF fayllardagi matnni o‘qiydi.',f3:'Maxfiylikka e’tibor',f3d:'Fayl brauzerda qayta ishlanadi va yuklanmaydi; kutubxonalar va OCR til ma’lumotlari CDN’dan yuklanadi.',f4:'Ko‘p tilli interfeys',f4d:'Ingliz, o‘zbek, rus va qozoq tillari mavjud.',notice:'Muhim: bu boshlang‘ich brauzer demosi, hujjatni mukammal tiklash tizimi emas. Ayniqsa raqamlar, formulalar va buxgalteriya yozuvlarini asl nusxa bilan tekshiring.',s1:'PDF yuklang',s1d:'Qurilmangizdan fayl tanlang.',s2:'Usulni tanlang',s2d:'Asl ko‘rinishni saqlang yoki matnni tahrirlash uchun ajrating.',s3:'Word faylni oling',s3d:'.docx faylni saqlang va ishlatishdan oldin tekshiring.',foot:'Kutubxonalar avtomatik yuklanadi; internet kerak.',choose:'Boshlash uchun PDF tanlang →',libLoading:'Kutubxonalar yuklanmoqda…',loading:'PDF yuklanmoqda…',page:'Sahifa qayta ishlanmoqda',done:'Tayyor! Word fayli yuklab olindi.',error:'Konvertatsiya xatosi: ',noLib:'Kutubxonalarni hech bir CDN’dan yuklab bo‘lmadi. Internetni tekshirib, qayta urinib ko‘ring.',ocrLoad:'OCR dvigateli yuklanmoqda…',ocr:'Skanerlangan sahifa OCR orqali tanilmoqda…',empty:'Tanlanadigan matn topilmadi. OCR ishga tushirilmoqda…',download:'Word fayli tayyorlanmoqda…',tooBig:'Fayl katta. Konvertatsiya biroz vaqt olishi mumkin.',notPdf:'Iltimos, PDF fayl tanlang.',pwd:'Bu PDF parol bilan himoyalangan. Parolni olib tashlab, qayta urinib ko‘ring.',noText:'[Bu sahifada matn taniy olinmadi.]'},
+ru:{eyebrow:'НОВЫЙ ПОДХОД К КОНВЕРТАЦИИ ДОКУМЕНТОВ',headline:'Ваш PDF — <span class="grad">в Word без лишних сложностей.</span>',intro:'Преобразуйте PDF в Word. Выберите редактируемый текст или сохранение исходного вида каждой страницы.',convert:'Конвертировать документ',sub:'В этой демоверсии PDF обрабатывается в браузере и не загружается на наш сервер.',dropTitle:'Перетащите PDF сюда',dropSub:'или нажмите для выбора · только PDF · рекомендуется до 30 МБ',modeLabel:'Выберите режим конвертации',exactTitle:'Сохранить внешний вид',exactDesc:'Каждая страница PDF вставляется в Word как изображение высокого разрешения. Подходит для таблиц и форм.',textTitle:'Редактируемый текст',textDesc:'Извлекает текст в Word. Сложные таблицы и форматирование могут измениться.',langLabel:'Язык OCR (для сканов)',ocrNote:'OCR запускается, если на странице нет выделяемого текста. Точность зависит от качества скана и языка.',button:'Преобразовать в Word →',why:'Для документов, которые важны',whySub:'Удобный процесс для книг, отчётов и рабочих документов.',f1:'Поддержка таблиц',f1d:'В режиме точного вида визуально сохраняются строки и столбцы таблицы.',f2:'Извлечение текста',f2d:'Режим редактирования считывает текст из многих цифровых PDF.',f3:'Внимание к приватности',f3d:'Файл обрабатывается в браузере и не загружается; библиотеки и языковые данные OCR подгружаются с CDN.',f4:'Многоязычный интерфейс',f4d:'Английский, узбекский, русский и казахский языки.',notice:'Важно: это стартовая браузерная демоверсия, а не сертифицированная система восстановления документов. Проверяйте числа, формулы и бухгалтерские проводки по оригиналу.',s1:'Загрузите PDF',s1d:'Выберите файл на устройстве.',s2:'Выберите режим',s2d:'Сохраните вид или извлеките редактируемый текст.',s3:'Скачайте Word',s3d:'Сохраните .docx и проверьте перед использованием.',foot:'Библиотеки загружаются автоматически; нужен интернет.',choose:'Выберите PDF для начала →',libLoading:'Загрузка библиотек…',loading:'Загрузка PDF…',page:'Обработка страницы',done:'Готово! Файл Word скачан.',error:'Ошибка конвертации: ',noLib:'Не удалось загрузить библиотеки ни с одного CDN. Проверьте интернет и повторите.',ocrLoad:'Загрузка OCR-движка…',ocr:'Распознаём сканированную страницу (OCR)…',empty:'Выделяемый текст не найден. Запускаем OCR…',download:'Создаём файл Word…',tooBig:'Файл большой. Конвертация может занять время.',notPdf:'Выберите файл PDF.',pwd:'PDF защищён паролем. Снимите пароль и повторите.',noText:'[На этой странице текст не распознан.]'},
+kk:{eyebrow:'ҚҰЖАТТАРДЫ ЖАҢАША ТҮРЛЕНДІРУ',headline:'PDF файлыңыз <span class="grad">Word форматында.</span>',intro:'PDF құжаттарын Word файлына айналдырыңыз. Өңделетін мәтінді таңдаңыз немесе әр беттің бастапқы көрінісін сақтаңыз.',convert:'Құжатты түрлендіру',sub:'Бұл демо PDF файлын браузерде өңдейді, серверімізге жүктемейді.',dropTitle:'PDF файлын осында тастаңыз',dropSub:'немесе таңдау үшін басыңыз · тек PDF · 30 МБ-қа дейін ұсынылады',modeLabel:'Түрлендіру режимін таңдаңыз',exactTitle:'Бастапқы көріністі сақтау',exactDesc:'PDF-тің әр беті Word ішіне жоғары сапалы сурет болып енгізіледі. Кестелер мен пішіндерге қолайлы.',textTitle:'Өңделетін мәтін',textDesc:'Мәтінді бөліп алып Word-қа енгізеді. Күрделі кестелер мен пішім өзгеруі мүмкін.',langLabel:'OCR тілі (сканерленген PDF үшін)',ocrNote:'OCR бетте таңдалатын мәтін болмағанда ғана қолданылады. Дәлдік скан сапасы мен тілге байланысты.',button:'Word форматына айналдыру →',why:'Маңызды құжаттарға арналған',whySub:'Кітаптар, есептер және кеңсе құжаттарына ыңғайлы жұмыс барысы.',f1:'Кестелерге қолайлы',f1d:'Дәл көрініс режимі кестенің жолдары мен бағандарының көрінісін сақтайды.',f2:'Мәтінді бөліп алу',f2d:'Өңдеу режимі көптеген цифрлық PDF ішіндегі мәтінді оқиды.',f3:'Құпиялылыққа мән береді',f3d:'Файл браузерде өңделеді, серверге жүктелмейді; кітапханалар мен OCR тіл деректері CDN-нен жүктеледі.',f4:'Көптілді интерфейс',f4d:'Ағылшын, өзбек, орыс және қазақ тілдері бар.',notice:'Маңызды: бұл құжатты мінсіз қалпына келтіретін сертификатталған жүйе емес, браузерлік демо. Әсіресе сандарды, формулаларды және бухгалтерлік проводкаларды түпнұсқамен салыстырыңыз.',s1:'PDF жүктеңіз',s1d:'Құрылғыңыздан файл таңдаңыз.',s2:'Режимді таңдаңыз',s2d:'Көріністі сақтаңыз немесе өңделетін мәтінді бөліп алыңыз.',s3:'Word жүктеп алыңыз',s3d:'.docx файлын сақтап, қолданар алдында тексеріңіз.',foot:'Кітапханалар автоматты жүктеледі; интернет қажет.',choose:'Бастау үшін PDF таңдаңыз →',libLoading:'Кітапханалар жүктелуде…',loading:'PDF жүктелуде…',page:'Бет өңделуде',done:'Дайын! Word файлы жүктелді.',error:'Түрлендіру қатесі: ',noLib:'Кітапханалар ешбір CDN-нен жүктелмеді. Интернетті тексеріп, қайта көріңіз.',ocrLoad:'OCR қозғалтқышы жүктелуде…',ocr:'Сканерленген бет OCR арқылы танылуда…',empty:'Таңдалатын мәтін табылмады. OCR іске қосылуда…',download:'Word файлы жасалуда…',tooBig:'Файл үлкен. Түрлендіру біраз уақыт алуы мүмкін.',notPdf:'PDF файлын таңдаңыз.',pwd:'Бұл PDF құпиясөзбен қорғалған. Құпиясөзді алып тастап, қайта көріңіз.',noText:'[Бұл бетте мәтін танылмады.]'}};
+
+let lang='en', selected=null;
+const $=id=>document.getElementById(id);
+const uiLang=$('uiLang'), fileInput=$('file'), drop=$('drop'), go=$('go');
+
+function setLang(l){
+  lang=T[l]?l:'en';
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i]').forEach(el=>{const k=el.dataset.i;if(T[lang][k])el.innerHTML=T[lang][k]});
+  go.textContent=selected?T[lang].button:T[lang].choose;
+  try{localStorage.setItem('cc-lang',lang)}catch(e){}
+}
+uiLang.addEventListener('change',()=>setLang(uiLang.value));
+
+function show(s,isErr){const st=$('status');st.textContent=s;st.classList.toggle('err',!!isErr);st.classList.add('show')}
+function hide(){$('status').classList.remove('show')}
+function progress(n){$('bar').style.width=Math.max(0,Math.min(100,n))+'%'}
+
+function setFile(f){
+  if(!f)return;
+  if(f.type!=='application/pdf'&&!f.name.toLowerCase().endsWith('.pdf')){show(T[lang].notPdf,true);return}
+  selected=f;
+  $('filename').textContent='✓ '+f.name+' · '+(f.size/1024/1024).toFixed(2)+' MB';
+  go.disabled=false;go.textContent=T[lang].button;
+  progress(0);
+  if(f.size>30*1024*1024)show(T[lang].tooBig);else hide();
+}
+/* The <label> already opens the picker natively — no extra click handler (it caused a double dialog). */
+fileInput.addEventListener('change',e=>{setFile(e.target.files[0]);fileInput.value=''});
+['dragenter','dragover'].forEach(n=>drop.addEventListener(n,e=>{e.preventDefault();drop.classList.add('drag')}));
+['dragleave','drop'].forEach(n=>drop.addEventListener(n,e=>{e.preventDefault();drop.classList.remove('drag')}));
+drop.addEventListener('drop',e=>setFile(e.dataTransfer.files[0]));
+/* Stop the browser from navigating to the PDF if it is dropped outside the drop zone. */
+['dragover','drop'].forEach(n=>window.addEventListener(n,e=>{if(!drop.contains(e.target))e.preventDefault()}));
+
+function saveBlob(blob,name){const a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),5000)}
+function safeName(n){return n.replace(/\.pdf$/i,'').replace(/[\\/:*?"<>|]+/g,'_')||'converted'}
+
+/* ---------- Text extraction: group items into lines, then lines into paragraphs ---------- */
+function extractParagraphs(items){
+  const rows=[];
+  for(const it of items){
+    if(typeof it.str!=='string'||!it.str.length)continue;
+    const x=it.transform[4],y=it.transform[5],h=Math.abs(it.height)||Math.abs(it.transform[3])||10;
+    let row=null;
+    for(let k=rows.length-1;k>=0&&k>=rows.length-8;k--){if(Math.abs(rows[k].y-y)<h*0.5){row=rows[k];break}}
+    if(!row){row={y,h,items:[]};rows.push(row)}
+    row.items.push({x,s:it.str,w:it.width||0});
+  }
+  rows.sort((a,b)=>b.y-a.y);
+  const lines=[];
+  for(const r of rows){
+    r.items.sort((a,b)=>a.x-b.x);
+    let line='',lastEnd=null;
+    for(const t of r.items){
+      if(lastEnd!==null&&t.x-lastEnd>r.h*0.15&&!line.endsWith(' ')&&!t.s.startsWith(' '))line+=' ';
+      line+=t.s;lastEnd=t.x+t.w;
+    }
+    line=line.replace(/\s+/g,' ').trim();
+    if(!line)continue;
+    const first=r.items[0].x;
+    lines.push({text:line,y:r.y,h:r.h,width:(lastEnd||first)-first});
+  }
+  const maxW=Math.max(1,...lines.map(l=>l.width));
+  const paras=[];let cur=null,prev=null;
+  for(const l of lines){
+    const bigGap=prev&&(prev.y-l.y)>prev.h*1.9;
+    const prevShort=prev&&prev.width<maxW*0.75; /* short line = end of paragraph / list item */
+    if(!cur||bigGap||prevShort){if(cur)paras.push(cur);cur=l.text}
+    else cur+=' '+l.text;
+    prev=l;
+  }
+  if(cur)paras.push(cur);
+  return paras;
+}
+
+/* ---------- Main conversion ---------- */
+async function main(){
+  if(!selected)return;
+  go.disabled=true;progress(0);
+  let ocrWorker=null,pdf=null;
+  try{
+    show(T[lang].libLoading);
+    try{await loadLibs()}catch(e){throw new Error(T[lang].noLib)}
+    show(T[lang].loading);
+    const buf=await selected.arrayBuffer();
+    pdf=await pdfjsLib.getDocument({data:new Uint8Array(buf)}).promise;
+    const mode=document.querySelector('input[name="mode"]:checked').value;
+    const {Document,Packer,Paragraph,TextRun,ImageRun}=docx;
+    const children=[];
+    const ocrLang=$('ocrLang').value, scale=parseFloat($('scale').value)||2, total=pdf.numPages;
+
+    for(let i=1;i<=total;i++){
+      show(`${T[lang].page} ${i}/${total}…`);
+      const page=await pdf.getPage(i);
+
+      if(mode==='exact'){
+        const base=page.getViewport({scale:1}), vp=page.getViewport({scale});
+        const canvas=document.createElement('canvas');
+        canvas.width=Math.ceil(vp.width);canvas.height=Math.ceil(vp.height);
+        const ctx=canvas.getContext('2d',{alpha:false});
+        ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);
+        await page.render({canvasContext:ctx,viewport:vp}).promise;
+        const blob=await new Promise(r=>canvas.toBlob(r,'image/jpeg',0.92));
+        const bytes=new Uint8Array(await blob.arrayBuffer());
+        /* Fit inside A4 with 0.5" margins: 698 x 1000 px (96 dpi) */
+        let w=698,h=w*base.height/base.width;
+        if(h>1000){h=1000;w=h*base.width/base.height}
+        children.push(new Paragraph({
+          children:[new ImageRun({data:bytes,type:'jpg',transformation:{width:Math.round(w),height:Math.round(h)}})],
+          spacing:{after:0,before:0},pageBreakBefore:i>1}));
+        canvas.width=canvas.height=1;
+      }else{
+        const tc=await page.getTextContent();
+        let paras=extractParagraphs(tc.items);
+        if(!paras.length){
+          show(`${T[lang].empty} (${i}/${total})`);
+          if(!ocrWorker){
+            show(T[lang].ocrLoad);
+            try{await loadFrom(TESS_URLS,()=>window.Tesseract)}catch(e){throw new Error(T[lang].noLib)}
+            ocrWorker=await Tesseract.createWorker(ocrLang,1,{logger:m=>{
+              if(m.status==='recognizing text')show(`${T[lang].ocr} ${Math.round((m.progress||0)*100)}% · ${i}/${total}`)}});
+          }
+          const vp=page.getViewport({scale:2});
+          const canvas=document.createElement('canvas');
+          canvas.width=Math.ceil(vp.width);canvas.height=Math.ceil(vp.height);
+          const ctx=canvas.getContext('2d',{alpha:false});
+          ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);
+          await page.render({canvasContext:ctx,viewport:vp}).promise;
+          const result=await ocrWorker.recognize(canvas);
+          paras=(result.data.text||'').split(/\n\s*\n/).map(p=>p.replace(/\s*\n\s*/g,' ').trim()).filter(Boolean);
+          canvas.width=canvas.height=1;
+        }
+        if(!paras.length)paras=[T[lang].noText];
+        paras.forEach((p,idx)=>children.push(new Paragraph({
+          children:[new TextRun({text:p})],spacing:{after:120},
+          pageBreakBefore:i>1&&idx===0})));
+      }
+      page.cleanup();
+      progress(i/total*90);
+    }
+
+    show(T[lang].download);
+    const doc=new Document({
+      styles:{default:{document:{run:{font:'Calibri',size:22}}}},
+      sections:[{properties:{page:{margin:{top:720,right:720,bottom:720,left:720}}},children}]});
+    const blob=await Packer.toBlob(doc);
+    saveBlob(blob,safeName(selected.name)+'.docx');
+    progress(100);show(T[lang].done);
+  }catch(e){
+    console.error(e);
+    const msg=(e&&e.name==='PasswordException')?T[lang].pwd:T[lang].error+(e&&e.message?e.message:String(e));
+    show(msg,true);
+  }finally{
+    try{if(ocrWorker)await ocrWorker.terminate()}catch(_){}
+    try{if(pdf)await pdf.destroy()}catch(_){}
+    go.disabled=false;go.textContent=T[lang].button;
+  }
+}
+go.addEventListener('click',main);
+
+/* ---------- Init: pick language, start preloading libraries immediately ---------- */
+(function init(){
+  let l='en';
+  try{l=localStorage.getItem('cc-lang')||''}catch(e){}
+  if(!T[l]){const n=(navigator.language||'en').slice(0,2).toLowerCase();l=T[n]?n:'en'}
+  uiLang.value=l;setLang(l);
+  loadLibs().catch(()=>{show(T[lang].noLib,true)}); /* silent preload; retried automatically on Convert */
+})();
+</script></body></html>
